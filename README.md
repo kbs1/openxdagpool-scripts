@@ -43,6 +43,8 @@ As a last thing, copy `wwwscripts/balance.php` into `/var/www/default` directory
 # Usage
 To use these scripts, always `su pool; cd` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
 
+NEVER delete your xdag.log file, only if you are certain the [pool website](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts information. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
+
 # Pool updates
 Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. Cd to directory and type `./xdag_update.sh` or git pull manually. Run `./xdag_run.sh`, run daemon with `-r` option.
 This will allow the program to load blocks while the old pool is running.
