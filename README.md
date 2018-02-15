@@ -5,7 +5,7 @@ This repository contains scripts that are run as the pool user. Pool user runs t
 This readme can't go in-depth into every step necessary, you are expected to have good knowledge of linux / unix administration as well as basics of computer programming, and also good understanding of
 how xdag pool daemons work in general and be familiar with their settings. This readme assumes your IP is already whitelisted on the main network.
 
-# Setup
+# Full setup
 On a fresh ubuntu server 16.04 LTS installation, perform the following steps, initially as `root`:
 1. `apt-get install git nginx php7.0-fpm php7.0-cli build-essential`
 2. `adduser pool`
@@ -40,10 +40,20 @@ Done. Your software should now periodically export necessary files to the nginx 
 
 As a last thing, copy `wwwscripts/balance.php` into `/var/www/default` directory. Make sure the file is owned by `pool` user and is executable.
 
+# Partial setup
+If you already run your pool daemon by any means, only necessary additions for the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) to work properly
+are the three CRON scripts mentioned in the chapter above (`xdag_dump_fastdata.sh`, `xdag_dump_slowdata.sh` and `xdag_delete_tmp_files.sh`). The last one
+(`xdag_delete_tmp_files.sh` is only required to keep your hard drive space in check, by deleting unnecessary tmp files created by the pool daemon.
+
+Tweak the scripts to export data from your pool daemon. Nginx is required so these text files are downloadable by [OpenXDAGPool](https://github.com/kbs1/openxdagpool).
+
+As for balance checking, you are not required to use `wwwscripts/balance.php`, you can use any other balance checker that *contains* compatible output (`Balance: x.xxxxxxxxx XDAG`) and
+can accept XDAG address in question as a GET parameter. The balance checker URL is configurable in [OpenXDAGPool's](https://github.com/kbs1/openxdagpool) `.env` file.
+
 # Usage
 To use these scripts, always `su pool; cd` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
 
-NEVER delete your xdag.log file, only if you are certain the [pool website](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts information. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
+NEVER delete your xdag.log file, only if you are certain the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts information. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
 
 # Pool updates
 Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. Cd to directory and type `./xdag_update.sh` or git pull manually. Run `./xdag_run.sh`, run daemon with `-r` option.
