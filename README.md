@@ -55,7 +55,7 @@ To use these scripts, always `su pool; cd` and then run `./xdag_....` as you nee
 
 NEVER delete your xdag.log file, only if you are certain the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts information. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
 
-If your pool is already running for a long time and you have your all-time `xdag.log` file, tweak the `generate_last_days_regex.php` file by uncommenting marked line, then waiting for OpenXDAG pool to import your payments. This happens every 3 hours. After this is done, you can safely comment the line back to keep importing only the latest payouts.
+If your pool is already running for a long time and you have your all-time `xdag.log` file(s), tweak the `generate_last_days_regex.php` file by uncommenting marked line, then waiting for OpenXDAG pool to import your payments. This happens every 3 hours. After this is done, you can safely comment the line back to keep importing only the latest payouts.
 
 # Pool updates
 Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. Cd to directory and type `./xdag_update.sh` or git pull manually. Run `./xdag_run.sh`, run daemon with `-r` option.
