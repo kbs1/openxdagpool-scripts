@@ -3,7 +3,7 @@ This repository contains scripts that are run as the pool user. Pool user runs t
 
 # Skills required
 This readme can't go in-depth into every step necessary, you are expected to have good knowledge of linux / unix administration as well as basics of computer programming, and also good understanding of
-how xdag pool daemons work in general and be familiar with their settings.
+how xdag pool daemons work in general and be familiar with their settings. This readme assumes your IP is already whitelisted on the main network.
 
 # Setup
 On a fresh ubuntu server 16.04 LTS installation, perform the following steps, initially as `root`:
