@@ -43,7 +43,7 @@ As a last thing, copy `wwwscripts/balance.php` into `/var/www/default` directory
 # Partial setup
 If you already run your pool daemon by any means, only necessary additions for the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) to work properly
 are the three CRON scripts mentioned in the chapter above (`xdag_dump_fastdata.sh`, `xdag_dump_slowdata.sh` and `xdag_delete_tmp_files.sh`). The last one
-(`xdag_delete_tmp_files.sh` is only required to keep your hard drive space in check, by deleting unnecessary tmp files created by the pool daemon.
+(`xdag_delete_tmp_files.sh`) is only required to keep your hard drive space in check, by deleting unnecessary tmp files created by the pool daemon.
 
 Tweak the scripts to export data from your pool daemon. Nginx is required so these text files are downloadable by [OpenXDAGPool](https://github.com/kbs1/openxdagpool).
 
