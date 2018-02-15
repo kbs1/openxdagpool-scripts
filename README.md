@@ -42,8 +42,9 @@ Done. Your software should now periodically export necessary files to the nginx 
 To use these scripts, always `su pool; cd` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
 
 # Pool updates
-Update pool by running xdag that is currently NOT stored in `CURRENT_XDAG`. Cd to directory and run `./xdag_run.sh`, run with `-r` option. This will allow the program to load blocks while the old pool is running.
-When done (check using `./xdag_console.sh` and `state` and `stats` commands), terminate the old daemon marked by `CURRENT_XDAG` using `terminate` in it's console. ONLY THEN `echo -n 2 > CURRENT_XDAG` or 1 depending on
+Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. Cd to directory and type `./xdag_update.sh` or git pull manually. Run `./xdag_run.sh`, run daemon with `-r` option.
+This will allow the program to load blocks while the old pool is running.
+When done (check using `./xdag_console.sh` and `state` and `stats` commands), terminate the old daemon marked by `CURRENT_XDAG` using `terminate` in it's console. ONLY THEN `echo -n 2 > CURRENT_XDAG` or `1` depending on
 what software is main now. You may pause cron by commenting out the lines in order to not export data from already dead daemon.
 
-After new daemon picks up, uncomment cron lines, verify CURRENT_XDAG contains the correct daemon number, and your update is complete.
+After new daemon picks up, uncomment cron lines, verify CURRENT_XDAG contains the correct daemon number (no newline at the end! use `echo -n` as described), and your update is complete.
