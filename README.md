@@ -38,6 +38,8 @@ Next type `crontab -e` and enter the following cron schedule:
 ```
 Done. Your software should now periodically export necessary files to the nginx public webroot directory.
 
+As a last thing, copy `wwwscripts/balance.php` into `/var/www/default` directory. Make sure the file is owned by `pool` user and is executable.
+
 # Usage
 To use these scripts, always `su pool; cd` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
 
