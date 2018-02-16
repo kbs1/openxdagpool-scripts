@@ -1,13 +1,13 @@
 # Contents
 This repository contains scripts that are run as the pool user. Pool user runs the xdag pool daemon itself, cron schedule and nginx PHP FPM pool.
 
-# Skills required
+# Expected skills
 This readme can't go in-depth into every step necessary, you are expected to have good knowledge of linux / unix administration as well as basics of computer programming, and also good understanding of
 how xdag pool daemons work in general and be familiar with their settings. This readme assumes your IP is already whitelisted on the main network.
 
 # Full setup
 On a fresh ubuntu server 16.04 LTS installation, perform the following steps, initially as `root`:
-1. `apt-get install git nginx php7.0-fpm php7.0-cli build-essential`
+1. `apt-get install git nginx php7.0-fpm php7.0-cli build-essential libssl-dev`
 2. `adduser pool`
 3. `su pool`
 4. `cd /home/pool`
@@ -25,7 +25,7 @@ your password, type random keys, wait for the deamon to fully sync with the newt
 
 Enter the `xdag2/cheatcoin` directory and copy `wallet.dat`, `dnet_key.dat` from `xdag1/cheatcoin`. Symlink `storage` folder by typing `ln -s /home/pool/xdag1/cheatcoin/storage`. Verify by typing `ls -la`.
 
-Once all is done, go to templates directory in this repository, and COPY all files to both `xdag1/cheatcoin` and `xdag2/cheatcoin`. EDIT the `xdag_run.sh` file in both folders with *your* pool settings.
+Once all is done, go to templates directory in this repository, and COPY all files to both `xdag1/cheatcoin` and `xdag2/cheatcoin`. Edit the `xdag_run.sh` file in both folders with *your* pool settings.
 
 Re-execute xdag1 using `xdag_run.sh` in `xdag1/cheatcoin` folder without the `-r` option (script will ask). Wait for the pool to start up and load blocks from the storage.
 
