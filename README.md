@@ -47,7 +47,7 @@ are the three CRON scripts mentioned in the chapter above (`xdag_dump_fastdata.s
 
 Tweak the scripts to export data from your pool daemon. Nginx is required so these text files are downloadable by [OpenXDAGPool](https://github.com/kbs1/openxdagpool).
 
-As for balance checking, you are not required to use `wwwscripts/balance.php`, you can use any other balance checker that *contains* compatible output (`Balance: x.xxxxxxxxx XDAG`) and
+As for balance checking, you are not required to use `wwwscripts/balance.php`, you can use any other balance checker that *contains* compatible output (`x.xxxxxxxxx` - the address in question balance with 9 decimal places) and
 can accept XDAG address in question as a GET / route parameter. The balance checker URL is configurable in [OpenXDAGPool's](https://github.com/kbs1/openxdagpool) `.env` file.
 
 # Usage
