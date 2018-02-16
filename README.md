@@ -7,7 +7,7 @@ how xdag pool daemons work in general and be familiar with their settings. This 
 
 # Full setup
 On a fresh ubuntu server 16.04 LTS installation, perform the following steps, initially as `root`:
-1. `apt-get install git nginx php7.0-fpm php7.0-cli build-essential libssl-dev`
+1. `apt-get install git nginx php7.0-fpm php7.0-cli build-essential libssl-dev gcc`
 2. `adduser pool`
 3. `su pool`
 4. `cd /home/pool`
