@@ -27,7 +27,7 @@ Enter the `xdag2/cheatcoin` directory and copy `wallet.dat`, `dnet_key.dat` from
 
 Once all is done, go to templates directory in this repository, and COPY all files to both `xdag1/cheatcoin` and `xdag2/cheatcoin`. Edit the `xdag_run.sh` file in both folders with *your* pool settings.
 
-Re-execute xdag1 using `xdag_run.sh` in `xdag1/cheatcoin` folder without the `-r` option (script will ask). Wait for the pool to start up and load blocks from the storage.
+Re-execute xdag1 using `./xdag_run.sh` in `xdag1/cheatcoin` folder without the `-r` option (script will ask). Wait for the pool to start up and load blocks from the storage.
 
 Next type `crontab -e` and enter the following cron schedule:
 ```
