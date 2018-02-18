@@ -51,7 +51,7 @@ As for balance checking, you are not required to use `wwwscripts/balance.php`, y
 can accept XDAG address in question as a GET / route parameter. The balance checker URL is configurable in [OpenXDAGPool's](https://github.com/kbs1/openxdagpool) `.env` file.
 
 # Usage
-To use these scripts, always `su pool; cd` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
+To use these scripts, always `su pool`,  `cd` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
 
 NEVER delete your xdag.log file, only if you are certain the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts information. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
 
