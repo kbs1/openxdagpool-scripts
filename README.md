@@ -19,7 +19,7 @@ On a fresh ubuntu server 16.04 LTS installation, perform the following steps, in
 10. make sure php7.0-fpm pool is running as user `pool`
 11. make sure nginx config allows execution of `php` files
 
-Once this is done, compile both xdag1 and xdag2 using `make`. Execute xdag1 with proper pool command line,
+Once this is done, compile both xdag1 and xdag2 using `make`. Execute xdag1 with proper pool command line (as user `pool`),
 for example `TZ=GMT ./xdag -d -p 95.105.233.208:16775 -P 95.105.233.208:13654:20000:0.5:1:1:200:0.5`. Set up
 your password, type random keys, wait for the deamon to fully sync with the newtwork. Then quit the daemon by typing `terminate`.
 
