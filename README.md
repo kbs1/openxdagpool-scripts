@@ -15,7 +15,7 @@ On a fresh ubuntu server 16.04 LTS installation, perform the following steps, in
 6. `git clone https://github.com/XDagger/xdag.git xdag1`
 7. `git clone https://github.com/XDagger/xdag.git xdag2` (TWO separate working copies are necessary for proper pool operation)
 8. `echo -n 1 > CURRENT_XDAG`
-9. make sure `/var/www/default` exists and is owned by www-data
+9. make sure `/var/www/pool` exists and is owned by www-data
 10. make sure php7.0-fpm pool is running as user `pool`
 11. make sure nginx config allows execution of `php` files
 
@@ -38,7 +38,7 @@ Next type `crontab -e` and enter the following cron schedule:
 ```
 Done. Your software should now periodically export necessary files to the nginx public webroot directory.
 
-As a last thing, copy `wwwscripts/balance.php` into `/var/www/default` directory. Make sure the file is owned by `pool` user and is executable.
+As a last thing, copy `wwwscripts/balance.php` into `/var/www/pool` directory. Make sure the file is owned by `pool` user and is executable.
 
 # Partial setup
 If you already run your pool daemon by any means, only necessary additions for the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) to work properly
