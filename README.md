@@ -15,21 +15,23 @@ On a fresh ubuntu server 16.04 LTS installation, perform the following steps, in
 6. `git clone https://github.com/XDagger/xdag.git xdag1`
 7. `git clone https://github.com/XDagger/xdag.git xdag2` (TWO separate working copies are necessary for proper pool operation)
 8. `echo -n 1 > CURRENT_XDAG`
-9. make sure `/var/www/pool` exists and is owned by www-data
-10. make sure php7.0-fpm pool is running as user `pool`
+9. make sure `/var/www/pool` exists and is owned by `pool`
+10. make sure a new php7.0-fpm pool is running as user `pool`
 11. make sure nginx config allows execution of `php` files
 
-Once this is done, compile both xdag1 and xdag2 using `make`. Execute xdag1 with proper pool command line (as user `pool`),
+Once this is done, compile both xdag1 and xdag2 using `make`. Compile as user `pool`. Execute xdag1 with proper pool command line as user `pool`,
 for example `TZ=GMT ./xdag -d -p 95.105.233.208:16775 -P 95.105.233.208:13654:20000:0.5:1:1:200:0.5`. Set up
-your password, type random keys, wait for the deamon to fully sync with the newtwork. Then quit the daemon by typing `terminate`.
+your password, type random keys (at least 3 lines of random keys), wait for the deamon to fully sync with the newtwork.
+Then quit the daemon by typing `terminate`.
 
-Enter the `xdag2/cheatcoin` directory and copy `wallet.dat`, `dnet_key.dat` from `xdag1/cheatcoin`. Symlink `storage` folder by typing `ln -s /home/pool/xdag1/cheatcoin/storage`. Verify by typing `ls -la`.
+Enter the `xdag2/cheatcoin` directory (still as user `pool`) and copy `wallet.dat`, `dnet_key.dat` from `xdag1/cheatcoin`.
+Symlink `storage` folder by typing `ln -s /home/pool/xdag1/cheatcoin/storage`. Verify by typing `ls -la`.
 
 Once all is done, go to templates directory in this repository, and COPY all files to both `xdag1/cheatcoin` and `xdag2/cheatcoin`. Edit the `xdag_run.sh` file in both folders with *your* pool settings.
 
 Re-execute xdag1 using `./xdag_run.sh` in `xdag1/cheatcoin` folder without the `-r` option (script will ask). Wait for the pool to start up and load blocks from the storage.
 
-Next type `crontab -e` and enter the following cron schedule:
+Next type `crontab -e` as user `pool` and enter the following cron schedule:
 ```
 */5 * * * * /bin/bash /home/pool/scripts/xdag_dump_fastdata.sh
 3 */3 * * * /bin/bash /home/pool/scripts/xdag_dump_slowdata.sh
