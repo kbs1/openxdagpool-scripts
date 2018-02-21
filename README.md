@@ -14,7 +14,7 @@ On a fresh ubuntu server 16.04 LTS installation, perform the following steps, in
 5. `git clone https://github.com/kbs1/openxdagpool-scripts.git scripts`
 6. `git clone https://github.com/XDagger/xdag.git xdag1`
 7. `git clone https://github.com/XDagger/xdag.git xdag2` (TWO separate working copies are necessary for proper pool operation)
-8. `echo -n 1 > CURRENT_XDAG`
+8. `echo -n 1 > ~/CURRENT_XDAG`
 9. make sure `/var/www/pool` exists and is owned by `pool`
 10. make sure a new php7.0-fpm pool is running as user `pool`
 11. make sure nginx config allows execution of `php` files
