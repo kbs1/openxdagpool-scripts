@@ -62,7 +62,7 @@ If your pool is already running for a long time and you have your all-time `xdag
 # Pool updates
 Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. `cd` to desired xdag directory as user `pool` and type `./xdag_update.sh` or `git pull` and `make` manually. Run `./xdag_run.sh`, run daemon with `-r` option.
 This will allow the program to load blocks while the old pool is running.
-When done (check using `./xdag_console.sh` and `state` and `stats` commands), terminate the old daemon marked by `CURRENT_XDAG` using `terminate` in it's console. ONLY THEN `echo -n 2 > CURRENT_XDAG` or `1` depending on
+When done (check using `./xdag_console.sh` and `state` and `stats` commands), terminate the old daemon marked by `CURRENT_XDAG` using `terminate` in it's console. ONLY THEN `echo -n 2 > ~/CURRENT_XDAG` or `1` depending on
 what software is main now. You may pause cron by commenting out the lines in order to not export data from already dead daemon.
 
 After new daemon picks up, uncomment cron lines, verify `CURRENT_XDAG` contains the correct daemon number (no newline at the end! use `echo -n` as described), and your update is complete.
