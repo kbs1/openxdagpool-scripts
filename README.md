@@ -60,7 +60,7 @@ NEVER delete your xdag.log file, only if you are certain the [OpenXDAGPool](http
 If your pool is already running for a long time and you have your all-time `xdag.log` file(s), tweak the `generate_last_days_regex.php` file by uncommenting marked line, then wait for OpenXDAG pool to import your payouts. This happens every 3 hours. After this is done, you can safely comment the line back to keep importing only the latest payouts.
 
 # Pool updates
-Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. `cd` to directory and type `./xdag_update.sh` or `git pull` and `make` manually. Run `./xdag_run.sh`, run daemon with `-r` option.
+Update pool by updating and running xdag that is currently NOT stored in `CURRENT_XDAG`. `cd` to desired xdag directory and type `./xdag_update.sh` or `git pull` and `make` manually. Run `./xdag_run.sh`, run daemon with `-r` option.
 This will allow the program to load blocks while the old pool is running.
 When done (check using `./xdag_console.sh` and `state` and `stats` commands), terminate the old daemon marked by `CURRENT_XDAG` using `terminate` in it's console. ONLY THEN `echo -n 2 > CURRENT_XDAG` or `1` depending on
 what software is main now. You may pause cron by commenting out the lines in order to not export data from already dead daemon.
