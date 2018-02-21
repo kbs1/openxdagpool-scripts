@@ -55,7 +55,7 @@ can accept XDAG address in question as a GET / route parameter. The balance chec
 # Usage
 To use these scripts, always `su pool`,  `cd`, `cd scripts` and then run `./xdag_....` as you need, or execute `./xdag_....` in particular xdag directory to interact with desired xdag daemon.
 
-NEVER delete your xdag.log file, only if you are certain the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts information. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
+NEVER delete your xdag.log file, only if you are certain the [OpenXDAGPool](https://github.com/kbs1/openxdagpool) has already imported all payouts in that log file. If not, you will lose some of your payouts history. It is safe to delete an xdag.log file for currently unused daemon that's not been in use for more than 3 days, assuming all services (cron exports and website imports) are running properly.
 
 If your pool is already running for a long time and you have your all-time `xdag.log` file(s), tweak the `generate_last_days_regex.php` file by uncommenting marked line, then wait for OpenXDAG pool to import your payouts. This happens every 3 hours. After this is done, you can safely comment the line back to keep importing only the latest payouts.
 
