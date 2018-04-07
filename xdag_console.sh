@@ -12,5 +12,5 @@ cd ..
 CURRENTXDAG="`cat ./CURRENT_XDAG`"
 
 echo "Starting console (xdag$CURRENTXDAG)..."
-cd ./xdag"$CURRENTXDAG"/cheatcoin
+cd ./xdag"$CURRENTXDAG"/client
 ./xdag_console.sh

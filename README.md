@@ -24,12 +24,12 @@ for example `TZ=GMT ./xdag -d -p 95.105.233.208:16775 -P 95.105.233.208:13654:20
 your password, type random keys (at least 3 lines of random keys), wait for the deamon to fully sync with the newtwork.
 Then quit the daemon by typing `terminate`.
 
-Enter the `xdag2/cheatcoin` directory (still as user `pool`) and copy `wallet.dat`, `dnet_key.dat` from `xdag1/cheatcoin`.
-Symlink `storage` folder by typing `ln -s /home/pool/xdag1/cheatcoin/storage`. Verify by typing `ls -la`.
+Enter the `xdag2/client` directory (still as user `pool`) and copy `wallet.dat`, `dnet_key.dat` from `xdag1/client`.
+Symlink `storage` folder by typing `ln -s /home/pool/xdag1/client/storage`. Verify by typing `ls -la`.
 
-Once all is done, go to templates directory in this repository, and COPY all files to both `xdag1/cheatcoin` and `xdag2/cheatcoin`. Edit the `xdag_run.sh` file in both folders with *your* pool settings.
+Once all is done, go to templates directory in this repository, and COPY all files to both `xdag1/client` and `xdag2/client`. Edit the `xdag_run.sh` file in both folders with *your* pool settings.
 
-Re-execute xdag1 using `./xdag_run.sh` in `xdag1/cheatcoin` folder without the `-r` option (script will ask). Wait for the pool to start up and load blocks from the storage.
+Re-execute xdag1 using `./xdag_run.sh` in `xdag1/client` folder without the `-r` option (script will ask). Wait for the pool to start up and load blocks from the storage.
 
 Next type `crontab -e` as user `pool` and enter the following cron schedule:
 ```
