@@ -1,3 +1,6 @@
+# Deprecated
+Please use [XDagger/openxdagpool-scripts](https://github.com/XDagger/openxdagpool-scripts), development continues there.
+
 # Contents
 This repository contains scripts that are run as the pool user. Pool user runs the xdag pool daemon itself, cron schedule and nginx PHP FPM pool.
 
